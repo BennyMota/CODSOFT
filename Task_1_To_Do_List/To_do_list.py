@@ -6,6 +6,7 @@ root = tkinter.Tk()
 root.title("To-Do List")
 
 def add_task():
+    
     task = entry_task.get()
     if task != "":
         listbox_tasks.insert(tkinter.END, task)
@@ -13,13 +14,20 @@ def add_task():
     else:
         tkinter.messagebox.showwarning(title="Warning!", message="You must add a task")
         
+    return True
+        
 def delete_task():
-    pass
+    
+    try:
+        task_index = listbox_tasks.curselection()[0]
+        listbox_tasks.delete(task_index)
+    except:
+        tkinter.messagebox.showwarning(title="Warning!", message="Select a task to delete!")
 
 def save_task():
     pass
 
-def load_task():
+def load_tasks():
     pass
 
 
@@ -49,7 +57,7 @@ button_delete_task.pack()
 button_save_task = tkinter.Button(root, text="Save Task", width = 48, command=save_task)
 button_save_task.pack()
 
-button_load_task = tkinter.Button(root, text="Load Task", width = 48, command=load_task)
-button_load_task.pack()
+button_load_tasks = tkinter.Button(root, text="Load Task", width = 48, command=load_tasks)
+button_load_tasks.pack()
 
 root.mainloop()
