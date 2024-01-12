@@ -25,10 +25,19 @@ def delete_task():
         tkinter.messagebox.showwarning(title="Warning!", message="Select a task to delete!")
 
 def save_task():
-    pass
+    tasks = listbox_tasks.get(0, listbox_tasks.size())
+    pickle.dump(tasks, open("tasks.data", "wb"))
 
 def load_tasks():
-    pass
+    
+    try:
+        tasks = pickle.load(open("tasks.data", "rb"))
+        listbox_tasks.delete(0, tkinter.END)
+        
+        for task in tasks:
+            listbox_tasks.insert(tkinter.END, task)
+    except:
+        tkinter.messagebox.showwarning(title="Warning!", message="Could not find any file containing saved data!")
 
 
 #Creating the GUI
