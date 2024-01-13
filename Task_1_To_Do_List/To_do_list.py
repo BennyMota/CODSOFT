@@ -57,16 +57,16 @@ scrollbar_tasks.config(command=listbox_tasks.yview)
 entry_task = tkinter.Entry(root, width=50)
 entry_task.pack()
 
-button_add_task = tkinter.Button(root, text="Add Task", width = 48, command=add_task)
+button_add_task = tkinter.Button(root, text="Add Task", width = 24, command=add_task)
 button_add_task.pack()
 
-button_delete_task = tkinter.Button(root, text="Delete Task", width = 48, command=delete_task)
+button_delete_task = tkinter.Button(root, text="Delete Task", width = 24, command=delete_task)
 button_delete_task.pack()
 
-button_save_task = tkinter.Button(root, text="Save Task", width = 48, command=save_task)
+button_save_task = tkinter.Button(root, text="Save Task", width = 24, command=save_task)
 button_save_task.pack()
 
-button_load_tasks = tkinter.Button(root, text="Load Task", width = 48, command=load_tasks)
+button_load_tasks = tkinter.Button(root, text="Load Task", width = 24, command=load_tasks)
 button_load_tasks.pack()
 
 root.mainloop()
